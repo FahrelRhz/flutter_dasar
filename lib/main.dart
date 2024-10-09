@@ -1,64 +1,68 @@
 import 'package:flutter/material.dart';
-import 'page2.dart';
+import 'package:profil_page/page2.dart';
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: home(),
-    ));
+void main() {
+  runApp(const MyApp());
+}
 
-class home extends StatelessWidget {
-  const home({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage('images/code.jpg'),
-            fit: BoxFit.cover,
-          )),
-          child: Stack(alignment: Alignment.center, children: <Widget>[
-            Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.shortestSide,
-                padding: EdgeInsets.all(20.0),
-                alignment: Alignment.center,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0)),
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  child: Center(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      CircleAvatar(
-                        radius: 100.0,
-                        backgroundImage: AssetImage('assets/images/meee.jpg'),
-                      ),
-                      Text(
-                        "Fahrel Rhozian Ikhrodi Pratama",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                      Text(
-                        "Vocational High School Student at SMK Wikrama Bogor",
-                        textAlign: TextAlign.center,
-                        style:
-                            TextStyle(fontSize: 16, color: Colors.blue),
-                      ),
-                      TextButton(onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Page2()),
-                        );
-                      }, child:Text("See More")
-                      )
-                    ],
-                  )),
-                ))
-          ])),
+      appBar: AppBar(
+        title: Text("Login Form"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: "Email"
+              ),
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: "Password"
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => Page2()
+                  )
+                );
+              },
+              child: Text("Login"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
