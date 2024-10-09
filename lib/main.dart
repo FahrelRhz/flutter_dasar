@@ -28,37 +28,73 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login Form"),
-      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.center,
           children: <Widget>[
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: "Email"
+            Container(
+              width: MediaQuery.of(context).size.shortestSide,
+              height: MediaQuery.of(context).size.shortestSide,
+              padding: EdgeInsets.all(20.0),
+              alignment: Alignment.center,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50)),
+                color: Colors.blue[400],
+                child: Padding(
+                  padding: const EdgeInsets.all(50.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[ 
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                          labelStyle: TextStyle(
+                            fontSize: 16, // Ukuran teks label
+                            fontWeight: FontWeight.bold, // Membuat label lebih menonjol
+                            color: Colors.white, // Warna teks label
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: const Color.fromARGB(255, 255, 255, 255)), // Border saat fokus
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: const Color.fromARGB(255, 255, 255, 255)), // Border saat tidak fokus
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            fontSize: 16, // Ukuran teks label
+                            fontWeight: FontWeight.bold, // Membuat label lebih menonjol
+                            color: Colors.white, // Warna teks label
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: const Color.fromARGB(255, 255, 255, 255)), // Border saat fokus
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: const Color.fromARGB(255, 255, 255, 255)), // Border saat tidak fokus
+                          ),
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Page2()));
+                        },
+                        child: Text(
+                          "Login",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-            TextFormField(
-              decoration: InputDecoration(
-                hintText: "Password"
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(
-                    builder: (context) => Page2()
-                  )
-                );
-              },
-              child: Text("Login"),
             )
           ],
         ),
