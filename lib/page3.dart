@@ -104,9 +104,9 @@ class Page3 extends StatelessWidget {
                 // Card About
                 Card(
                   child: ListTile(
-                    leading: Icon(Icons.info, color: Colors.blue),
-                    title: Text('About'),
-                    subtitle: Text("I'm a Frontend Web Developer, I'm good at managing time, never give up and discipline"),
+                    leading: const Icon(Icons.info, color: Colors.blue),
+                    title: const Text('About'),
+                    subtitle: const Text("I'm a Frontend Web Developer, I'm good at managing time, never give up and discipline"),
                     onTap: () {
                       // Action for About
                     },
@@ -116,9 +116,9 @@ class Page3 extends StatelessWidget {
                 // Card History
                 Card(
                   child: ListTile(
-                    leading: Icon(Icons.history, color: Colors.green),
-                    title: Text('History'),
-                    subtitle: Text('I have 6 months internship experience in PT Starcore Indonesia and I once worked on a 5 month contract with my friend'),
+                    leading: const Icon(Icons.history, color: Colors.green),
+                    title: const Text('History'),
+                    subtitle: const Text('I have 6 months internship experience in PT Starcore Indonesia and I once worked on a 5 month contract with my friend'),
                     onTap: () {
                       // Action for History
                     },
@@ -128,9 +128,9 @@ class Page3 extends StatelessWidget {
                 // Card Blog
                 Card(
                   child: ListTile(
-                    leading: Icon(Icons.article, color: Colors.orange),
-                    title: Text('Skill'),
-                    subtitle: Text("React, Laravel, Python, CSS, Vue, Tailwind, Bootstrap, MYSQL, PostgreSQL, Flutter, PHP"),
+                    leading: const Icon(Icons.article, color: Colors.orange),
+                    title: const Text('Skill'),
+                    subtitle: const Text("React, Laravel, Python, CSS, Vue, Tailwind, Bootstrap, MYSQL, PostgreSQL, Flutter, PHP"),
                     onTap: () {
                       // Action for Blog
                     },
